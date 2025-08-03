@@ -1,0 +1,292 @@
+# 📁 FMS System - File Management System
+
+> **Prototype of FMS For A1 Launchpad Hackathon**  
+> Made By **Sakshi** and **Shashank**
+
+![FMS System](https://img.shields.io/badge/Project-FMS%20System-blue?style=for-the-badge)
+![Hackathon](https://img.shields.io/badge/A1%20Launchpad-Hackathon-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge)
+
+## 🛠️ Tech Stack
+
+| Frontend | Styling | Development | Deployment |
+|----------|---------|-------------|------------|
+| ![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?style=flat&logo=next.js) | ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1.9-38B2AC?style=flat&logo=tailwind-css) | ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript) | ![Vercel](https://img.shields.io/badge/Vercel-Ready-black?style=flat&logo=vercel) |
+| ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react) | ![Radix UI](https://img.shields.io/badge/Radix%20UI-Latest-161618?style=flat&logo=radix-ui) | ![Node.js](https://img.shields.io/badge/Node.js-Latest-339933?style=flat&logo=node.js) | ![PNPM](https://img.shields.io/badge/PNPM-Package%20Manager-F69220?style=flat&logo=pnpm) |
+
+### 📦 Key Dependencies
+- **UI Components**: Radix UI, Lucide React Icons
+- **Charts & Analytics**: Recharts for data visualization
+- **Form Handling**: React Hook Form with Zod validation
+- **Styling**: Tailwind CSS with custom animations
+- **Date Handling**: date-fns for date operations
+
+## 📋 Table of Contents
+
+- [🏗️ About the Project](#-about-the-project)
+- [✨ Features](#-features)
+- [🏛️ System Architecture](#-system-architecture)
+- [📱 User Roles & Permissions](#-user-roles--permissions)
+- [🚀 Getting Started](#-getting-started)
+- [📁 Project Structure](#-project-structure)
+- [🌟 Key Components](#-key-components)
+- [📊 Analytics & Reporting](#-analytics--reporting)
+- [🔐 Security Features](#-security-features)
+- [📱 Responsive Design](#-responsive-design)
+- [🚧 Future Enhancements](#-future-enhancements)
+- [🤝 Contributing](#-contributing)
+- [📞 Support](#-support)
+
+## 🏗️ About the Project
+
+**FMS (File Management System)** is a comprehensive document management solution designed specifically for construction and infrastructure projects. Built for the **A1 Launchpad Hackathon**, this prototype demonstrates a professional approach to managing project documents across multiple departments and stakeholders.
+
+### 🎯 Problem Statement
+Construction projects involve complex document workflows across multiple departments (Sales, PPC, Quality, Dispatch, etc.), making it challenging to:
+- Track document approval status
+- Maintain version control
+- Ensure secure access across teams
+- Generate compliance reports
+- Monitor project progress
+
+### 💡 Our Solution
+FMS provides a centralized platform that streamlines document management with:
+- **11-Stage Workflow**: Structured document flow from Sales to Completion
+- **Role-Based Access Control**: Secure access based on user roles
+- **Real-time Analytics**: Comprehensive project insights
+- **Document Traceability**: Complete audit trail for every document
+- **Multi-Project Management**: Handle multiple projects simultaneously
+
+## ✨ Features
+
+### 📊 Dashboard & Analytics
+- **Project Overview**: Real-time project status and progress tracking
+- **Document Statistics**: Upload, approval, and pending document counts
+- **Performance Metrics**: Team performance and project completion rates
+- **Interactive Charts**: Visual representation of project data
+
+### 📁 Document Management
+- **11-Stage Folder Structure**:
+  1. 📋 Sales
+  2. 📝 PPC (Production Planning & Control)
+  3. 🛡️ Quality Assurance
+  4. 🛒 Purchase
+  5. 🏭 Production
+  6. 🔍 Testing
+  7. 📦 Packaging
+  8. 🧪 Quality Control
+  9. 🚚 Dispatch
+  10. 🔧 Installation
+  11. ✅ Completion
+
+### 👥 User Management
+- **Multi-Role System**: Admin, Department Head, Employee, External Auditor
+- **Department-wise Access**: Controlled access based on department
+- **User Activity Tracking**: Monitor user engagement and activity
+
+### 🔍 Advanced Features
+- **Document Traceability**: Complete audit trail for every document
+- **Secure Sharing**: Generate secure links with expiry dates
+- **Version Control**: Automatic version tracking and history
+- **Search & Filter**: Advanced search across projects and documents
+- **Mobile Responsive**: Works seamlessly across all devices
+
+## 🏛️ System Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Components    │    │   Backend       │
+│   (Next.js)     │◄──►│   (React)       │◄──►│   (API Routes)  │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         │                       │                       │
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Authentication│    │   State Mgmt    │    │   Database      │
+│   (Google OAuth)│    │   (React State) │    │   (Planned)     │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+## 📱 User Roles & Permissions
+
+| Role | Permissions | Access Level |
+|------|-------------|--------------|
+| **Admin** | Full system access, user management, all projects | 🔴 Full Access |
+| **Department Head** | Manage department documents, team oversight | 🟡 Department Level |
+| **Employee** | Upload assigned documents, view project status | 🟢 Limited Access |
+| **External Auditor** | View-only access to shared documents | 🔵 Read Only |
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- PNPM (recommended) or NPM
+- Modern web browser
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/shashankjain2707/fms-frontend-prototype.git
+cd fms-frontend-prototype
+```
+
+2. **Install dependencies**
+```bash
+pnpm install
+# or
+npm install
+```
+
+3. **Start development server**
+```bash
+pnpm dev
+# or
+npm run dev
+```
+
+4. **Open your browser**
+```
+http://localhost:3000
+```
+
+### Build for Production
+```bash
+pnpm build
+pnpm start
+```
+
+## 📁 Project Structure
+
+```
+fms-frontend-prototype/
+├── 📁 app/                    # Next.js App Router
+│   ├── 🏠 page.tsx           # Login page
+│   ├── 📊 dashboard/         # Dashboard pages
+│   ├── 📋 projects/          # Project management
+│   ├── 👥 users/             # User management
+│   ├── 📈 analytics/         # Analytics dashboard
+│   ├── ⚙️ settings/          # System settings
+│   └── ❓ help/              # Help & documentation
+├── 📁 components/            # Reusable components
+│   ├── 🎨 ui/               # Base UI components
+│   ├── 📊 dashboard-layout.tsx
+│   ├── 📁 file-table.tsx
+│   ├── 📤 upload-panel.tsx
+│   └── 🔍 document-traceability.tsx
+├── 📁 lib/                   # Utilities
+│   └── utils.ts
+├── 📁 hooks/                 # Custom React hooks
+├── 📁 styles/                # Global styles
+└── 📁 public/                # Static assets
+```
+
+## 🌟 Key Components
+
+### 🏠 Dashboard Layout
+- **Sidebar Navigation**: Easy access to all modules
+- **Header**: User profile and notifications
+- **Footer**: Project watermark and credits
+- **Responsive Design**: Mobile-first approach
+
+### 📊 Analytics Panel
+- **Project Performance**: Visual charts and metrics
+- **Document Status**: Real-time document tracking
+- **Team Performance**: Productivity insights
+- **Export Functionality**: Generate reports
+
+### 📁 File Management
+- **Folder Structure**: 11-stage project workflow
+- **File Upload**: Drag-and-drop interface
+- **Version Control**: Automatic versioning
+- **Status Tracking**: Approval workflow
+
+### 🔍 Document Traceability
+- **Audit Trail**: Complete document history
+- **User Actions**: Track all user interactions
+- **Timestamp Logging**: Detailed activity timeline
+- **Status Updates**: Real-time status changes
+
+## 📊 Analytics & Reporting
+
+### 📈 Dashboard Metrics
+- Total Projects: Real-time project count
+- Active Projects: Currently running projects
+- Pending Approvals: Documents awaiting approval
+- Completion Rate: Project success metrics
+
+### 📋 Project Analytics
+- Progress Tracking: Visual progress indicators
+- Document Statistics: Upload/approval ratios
+- Team Performance: Individual and team metrics
+- Timeline Analysis: Project milestone tracking
+
+## 🔐 Security Features
+
+- **Role-Based Access Control**: Secure user permissions
+- **Document Encryption**: Secure file storage
+- **Audit Logging**: Complete activity tracking
+- **Secure Sharing**: Controlled document access
+- **Session Management**: Secure user sessions
+
+## 📱 Responsive Design
+
+- **Mobile First**: Optimized for mobile devices
+- **Tablet Support**: Perfect tablet experience
+- **Desktop Enhanced**: Full desktop functionality
+- **Cross-browser**: Compatible with all modern browsers
+
+## 🚧 Future Enhancements
+
+### 🔄 Planned Features
+- [ ] **Database Integration**: PostgreSQL/MongoDB backend
+- [ ] **Real-time Notifications**: WebSocket implementation
+- [ ] **Email Integration**: Automated email notifications
+- [ ] **API Documentation**: Comprehensive API docs
+- [ ] **Mobile App**: React Native mobile application
+- [ ] **Cloud Storage**: AWS S3/Google Cloud integration
+- [ ] **Advanced Analytics**: ML-powered insights
+- [ ] **Workflow Automation**: Automated approval processes
+
+### 🎯 Technical Improvements
+- [ ] **Performance Optimization**: Code splitting and lazy loading
+- [ ] **Testing Suite**: Unit and integration tests
+- [ ] **CI/CD Pipeline**: Automated deployment
+- [ ] **Monitoring**: Application performance monitoring
+- [ ] **Internationalization**: Multi-language support
+
+## 🤝 Contributing
+
+We welcome contributions from the community! This project was created for the A1 Launchpad Hackathon by Sakshi and Shashank.
+
+### 👥 Team
+- **Sakshi**: Frontend Development & UI/UX Design
+- **Shashank**: Architecture & Backend Integration
+
+### 📝 How to Contribute
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📞 Support
+
+For questions, issues, or feature requests related to this hackathon prototype:
+
+- **Project Repository**: [GitHub](https://github.com/shashankjain2707/fms-frontend-prototype)
+- **Hackathon**: A1 Launchpad Hackathon
+- **Team**: Sakshi & Shashank
+
+---
+
+<div align="center">
+
+### 🏆 A1 Launchpad Hackathon Submission
+
+**Prototype of FMS For A1 Launchpad Hackathon**  
+**Made By Sakshi and Shashank**
+
+![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?style=flat&logo=next.js)
+![Styled with Tailwind](https://img.shields.io/badge/Styled%20with-Tailwind%20CSS-38B2AC?style=flat&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat&logo=typescript)
+
+</div>

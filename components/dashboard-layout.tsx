@@ -117,7 +117,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
           <main className="flex-1 p-6">{children}</main>
           <footer className="border-t bg-background px-6 py-3">
             <div className="text-center text-xs text-muted-foreground">
-              <div>Prototype of FMS For A1 Launch Hackathon</div>
+              <div>Prototype of FMS For A1 Launchpad Hackathon</div>
               <div>Made By Sakshi and Shashank</div>
             </div>
           </footer>
