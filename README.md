@@ -3,6 +3,11 @@
 > **Prototype of FMS For A1 Launchpad Hackathon**  
 > Made By **Sakshi** and **Shashank**
 
+## 🌐 Live Demo
+[![Live Preview](https://img.shields.io/badge/🚀%20Live%20Preview-Visit%20App-success?style=for-the-badge)](https://fms-frontend-prototype.vercel.app/)
+
+**[👉 Try the FMS System Live Demo](https://fms-frontend-prototype.vercel.app/)**
+
 ![FMS System](https://img.shields.io/badge/Project-FMS%20System-blue?style=for-the-badge)
 ![Hackathon](https://img.shields.io/badge/A1%20Launchpad-Hackathon-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge)
@@ -272,6 +277,7 @@ We welcome contributions from the community! This project was created for the A1
 
 For questions, issues, or feature requests related to this hackathon prototype:
 
+- **Live Demo**: [https://fms-frontend-prototype.vercel.app/](https://fms-frontend-prototype.vercel.app/)
 - **Project Repository**: [GitHub](https://github.com/shashankjain2707/fms-frontend-prototype)
 - **Hackathon**: A1 Launchpad Hackathon
 - **Team**: Sakshi & Shashank
@@ -285,8 +291,12 @@ For questions, issues, or feature requests related to this hackathon prototype:
 **Prototype of FMS For A1 Launchpad Hackathon**  
 **Made By Sakshi and Shashank**
 
+[![🌐 Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-fms--frontend--prototype.vercel.app-success?style=for-the-badge)](https://fms-frontend-prototype.vercel.app/)
+
 ![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?style=flat&logo=next.js)
 ![Styled with Tailwind](https://img.shields.io/badge/Styled%20with-Tailwind%20CSS-38B2AC?style=flat&logo=tailwind-css)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat&logo=typescript)
+
+**[🚀 Experience the Live Demo →](https://fms-frontend-prototype.vercel.app/)**
 
 </div>
