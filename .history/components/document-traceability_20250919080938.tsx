@@ -103,7 +103,7 @@ const mockTraceabilityData = {
         },
       ],
       nextStage: "Quality",
-      assignedTo: "Sunflower Sakshi",
+      assignedTo: "Sunita Reddy",
       priority: "medium",
       documentType: "Production Plan",
       version: "v1.0",
