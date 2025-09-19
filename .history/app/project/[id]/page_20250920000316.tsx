@@ -111,9 +111,9 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
   const [awaitedParams, setAwaitedParams] = useState<{ id: string } | null>(null)
 
   // Await params in useEffect
-  useEffect(() => {
+  useState(() => {
     params.then(setAwaitedParams)
-  }, [params])
+  })
 
   if (!awaitedParams) {
     return <div>Loading...</div>
@@ -257,7 +257,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               </TabsContent>
 
               <TabsContent value="stage-overview">
-                <StageTraceability onStageClick={handleStageClick} projectId={awaitedParams.id} />
+                <StageTraceability onStageClick={handleStageClick} projectId={params.id} />
               </TabsContent>
 
               <TabsContent value="traceability">

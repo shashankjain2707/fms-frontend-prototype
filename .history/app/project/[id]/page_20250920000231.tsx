@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
@@ -103,21 +103,12 @@ const mockFolders = [
   },
 ]
 
-export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ProjectPage({ params }: { params: { id: string } }) {
+  const awaitedParams = await params
   const [selectedFolder, setSelectedFolder] = useState("1")
   const [showUploadPanel, setShowUploadPanel] = useState(false)
   const [showShareModal, setShowShareModal] = useState(false)
   const [activeTab, setActiveTab] = useState("files")
-  const [awaitedParams, setAwaitedParams] = useState<{ id: string } | null>(null)
-
-  // Await params in useEffect
-  useEffect(() => {
-    params.then(setAwaitedParams)
-  }, [params])
-
-  if (!awaitedParams) {
-    return <div>Loading...</div>
-  }
 
   // Get the current project based on ID
   const currentProject = mockProjects[awaitedParams.id as keyof typeof mockProjects] || mockProjects["MH_2025_001"]
@@ -217,7 +208,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 <Building className="w-6 h-6 text-indigo-600" />
                 <span className="text-xs text-gray-500">Budget</span>
               </div>
-              <div className="text-lg font-bold text-indigo-600">{currentProject.budget}</div>
+              <div className="text-lg font-bold text-indigo-600">{mockProject.budget}</div>
               <div className="text-sm text-gray-600">Total Budget</div>
             </div>
           </div>
@@ -257,7 +248,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               </TabsContent>
 
               <TabsContent value="stage-overview">
-                <StageTraceability onStageClick={handleStageClick} projectId={awaitedParams.id} />
+                <StageTraceability onStageClick={handleStageClick} projectId={params.id} />
               </TabsContent>
 
               <TabsContent value="traceability">
@@ -274,7 +265,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
 
       {/* Modals */}
       <UploadPanel isOpen={showUploadPanel} onClose={() => setShowUploadPanel(false)} selectedFolder={selectedFolder} />
-      <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} projectId={currentProject.id} />
+      <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} projectId={mockProject.id} />
     </DashboardLayout>
   )
 }

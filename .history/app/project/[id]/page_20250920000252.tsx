@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
@@ -103,21 +103,12 @@ const mockFolders = [
   },
 ]
 
-export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ProjectPage({ params }: { params: { id: string } }) {
+  const awaitedParams = await params
   const [selectedFolder, setSelectedFolder] = useState("1")
   const [showUploadPanel, setShowUploadPanel] = useState(false)
   const [showShareModal, setShowShareModal] = useState(false)
   const [activeTab, setActiveTab] = useState("files")
-  const [awaitedParams, setAwaitedParams] = useState<{ id: string } | null>(null)
-
-  // Await params in useEffect
-  useEffect(() => {
-    params.then(setAwaitedParams)
-  }, [params])
-
-  if (!awaitedParams) {
-    return <div>Loading...</div>
-  }
 
   // Get the current project based on ID
   const currentProject = mockProjects[awaitedParams.id as keyof typeof mockProjects] || mockProjects["MH_2025_001"]
@@ -257,7 +248,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               </TabsContent>
 
               <TabsContent value="stage-overview">
-                <StageTraceability onStageClick={handleStageClick} projectId={awaitedParams.id} />
+                <StageTraceability onStageClick={handleStageClick} projectId={params.id} />
               </TabsContent>
 
               <TabsContent value="traceability">

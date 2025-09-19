@@ -257,7 +257,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               </TabsContent>
 
               <TabsContent value="stage-overview">
-                <StageTraceability onStageClick={handleStageClick} projectId={awaitedParams.id} />
+                <StageTraceability onStageClick={handleStageClick} projectId={params.id} />
               </TabsContent>
 
               <TabsContent value="traceability">

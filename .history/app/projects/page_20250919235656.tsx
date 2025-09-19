@@ -51,7 +51,7 @@ const allProjects = [
     id: "DL_2025_002",
     name: "Delhi Metro Phase 4 - Janakpuri West",
     client: "Delhi Metro Rail Corporation",
-    manager: "Divyaraj Rathore",
+    manager: "Priya Sharma",
     startDate: "2025-01-10",
     endDate: "2025-11-30",
     status: "active",
@@ -67,7 +67,7 @@ const allProjects = [
     id: "KA_2025_003",
     name: "Bangalore IT Park Infrastructure",
     client: "Karnataka Industrial Areas Development Board",
-    manager: "Nidhi Shah",
+    manager: "Amit Patel",
     startDate: "2025-02-01",
     endDate: "2025-10-15",
     status: "pending",
@@ -83,7 +83,7 @@ const allProjects = [
     id: "TN_2024_004",
     name: "Chennai Port Expansion Project",
     client: "Chennai Port Trust",
-    manager: "Aman",
+    manager: "Sunita Reddy",
     startDate: "2024-06-01",
     endDate: "2024-12-31",
     status: "completed",
@@ -99,7 +99,7 @@ const allProjects = [
     id: "GJ_2024_005",
     name: "Ahmedabad Smart City Housing",
     client: "Gujarat Housing Board",
-    manager: "Shana Shashank",
+    manager: "Ravi Kumar",
     startDate: "2024-03-15",
     endDate: "2024-09-30",
     status: "archived",
@@ -241,11 +241,11 @@ export default function ProjectsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Managers</SelectItem>
-                  <SelectItem value="Sunflower Sakshi">Sunflower Sakshi</SelectItem>
-                  <SelectItem value="Divyaraj Rathore">Divyaraj Rathore</SelectItem>
-                  <SelectItem value="Nidhi Shah">Nidhi Shah</SelectItem>
-                  <SelectItem value="Aman">Aman</SelectItem>
-                  <SelectItem value="Shana Shashank">Shana Shashank</SelectItem>
+                  <SelectItem value="Sakshi Jain">Sakshi Jain</SelectItem>
+                  <SelectItem value="Priya Sharma">Priya Sharma</SelectItem>
+                  <SelectItem value="Amit Patel">Amit Patel</SelectItem>
+                  <SelectItem value="Sunita Reddy">Sunita Reddy</SelectItem>
+                  <SelectItem value="Ravi Kumar">Ravi Kumar</SelectItem>
                 </SelectContent>
               </Select>
             </div>

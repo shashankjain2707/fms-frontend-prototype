@@ -241,11 +241,11 @@ export default function ProjectsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Managers</SelectItem>
-                  <SelectItem value="Sunflower Sakshi">Sunflower Sakshi</SelectItem>
-                  <SelectItem value="Divyaraj Rathore">Divyaraj Rathore</SelectItem>
-                  <SelectItem value="Nidhi Shah">Nidhi Shah</SelectItem>
-                  <SelectItem value="Aman">Aman</SelectItem>
-                  <SelectItem value="Shana Shashank">Shana Shashank</SelectItem>
+                  <SelectItem value="Sakshi Jain">Sakshi Jain</SelectItem>
+                  <SelectItem value="Priya Sharma">Priya Sharma</SelectItem>
+                  <SelectItem value="Amit Patel">Amit Patel</SelectItem>
+                  <SelectItem value="Sunita Reddy">Sunita Reddy</SelectItem>
+                  <SelectItem value="Ravi Kumar">Ravi Kumar</SelectItem>
                 </SelectContent>
               </Select>
             </div>

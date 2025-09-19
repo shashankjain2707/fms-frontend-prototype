@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
@@ -103,21 +103,12 @@ const mockFolders = [
   },
 ]
 
-export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ProjectPage({ params }: { params: { id: string } }) {
+  const awaitedParams = await params
   const [selectedFolder, setSelectedFolder] = useState("1")
   const [showUploadPanel, setShowUploadPanel] = useState(false)
   const [showShareModal, setShowShareModal] = useState(false)
   const [activeTab, setActiveTab] = useState("files")
-  const [awaitedParams, setAwaitedParams] = useState<{ id: string } | null>(null)
-
-  // Await params in useEffect
-  useEffect(() => {
-    params.then(setAwaitedParams)
-  }, [params])
-
-  if (!awaitedParams) {
-    return <div>Loading...</div>
-  }
 
   // Get the current project based on ID
   const currentProject = mockProjects[awaitedParams.id as keyof typeof mockProjects] || mockProjects["MH_2025_001"]
@@ -184,7 +175,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 <FileText className="w-6 h-6 text-blue-600" />
                 <span className="text-xs text-gray-500">Total</span>
               </div>
-              <div className="text-2xl font-bold text-blue-600">{currentProject.uploaded}</div>
+              <div className="text-2xl font-bold text-blue-600">{mockProject.uploaded}</div>
               <div className="text-sm text-gray-600">Documents Uploaded</div>
             </div>
             <div className="bg-white rounded-lg p-4 border-l-4 border-yellow-500 shadow-sm">
@@ -192,7 +183,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 <Clock className="w-6 h-6 text-yellow-600" />
                 <span className="text-xs text-gray-500">Review</span>
               </div>
-              <div className="text-2xl font-bold text-yellow-600">{currentProject.pending}</div>
+              <div className="text-2xl font-bold text-yellow-600">{mockProject.pending}</div>
               <div className="text-sm text-gray-600">Pending Review</div>
             </div>
             <div className="bg-white rounded-lg p-4 border-l-4 border-green-500 shadow-sm">
@@ -200,7 +191,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 <CheckCircle className="w-6 h-6 text-green-600" />
                 <span className="text-xs text-gray-500">Done</span>
               </div>
-              <div className="text-2xl font-bold text-green-600">{currentProject.approved}</div>
+              <div className="text-2xl font-bold text-green-600">{mockProject.approved}</div>
               <div className="text-sm text-gray-600">Approved</div>
             </div>
             <div className="bg-white rounded-lg p-4 border-l-4 border-purple-500 shadow-sm">
@@ -208,16 +199,16 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 <TrendingUp className="w-6 h-6 text-purple-600" />
                 <span className="text-xs text-gray-500">Progress</span>
               </div>
-              <div className="text-2xl font-bold text-purple-600">{currentProject.progress}%</div>
+              <div className="text-2xl font-bold text-purple-600">{mockProject.progress}%</div>
               <div className="text-sm text-gray-600">Overall Progress</div>
-              <Progress value={currentProject.progress} className="mt-2 h-2" />
+              <Progress value={mockProject.progress} className="mt-2 h-2" />
             </div>
             <div className="bg-white rounded-lg p-4 border-l-4 border-indigo-500 shadow-sm">
               <div className="flex items-center justify-between mb-2">
                 <Building className="w-6 h-6 text-indigo-600" />
                 <span className="text-xs text-gray-500">Budget</span>
               </div>
-              <div className="text-lg font-bold text-indigo-600">{currentProject.budget}</div>
+              <div className="text-lg font-bold text-indigo-600">{mockProject.budget}</div>
               <div className="text-sm text-gray-600">Total Budget</div>
             </div>
           </div>
@@ -257,7 +248,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               </TabsContent>
 
               <TabsContent value="stage-overview">
-                <StageTraceability onStageClick={handleStageClick} projectId={awaitedParams.id} />
+                <StageTraceability onStageClick={handleStageClick} projectId={params.id} />
               </TabsContent>
 
               <TabsContent value="traceability">
@@ -274,7 +265,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
 
       {/* Modals */}
       <UploadPanel isOpen={showUploadPanel} onClose={() => setShowUploadPanel(false)} selectedFolder={selectedFolder} />
-      <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} projectId={currentProject.id} />
+      <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} projectId={mockProject.id} />
     </DashboardLayout>
   )
 }
